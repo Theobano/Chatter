@@ -12,11 +12,11 @@ export const HomeContainer = styled.div`
   }
 
   .styled-button {
-    margin-top: 0.75em;
+    margin-top: 0.75rem;
     text-decoration: none;
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    padding: 0.9em 1.75em;
+    padding: 0.9em 1.75rem;
     border-radius: 5px;
   }
 
@@ -51,15 +51,15 @@ export const HomeContainer = styled.div`
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        gap: 1.5em;
+        gap: 1.5rem;
 
         > h1 {
           color: var(--primary-color);
           margin: 0;
         }
         > p {
-          font-size: 1.5em;
-          line-height: 1.2em;
+          font-size: 1.5rem;
+          line-height: 1.5rem;
           margin: 0;
         }
       }
@@ -76,18 +76,18 @@ export const HomeContainer = styled.div`
       flex-direction: column;
       padding: 6em 0;
       .about-chatter {
-        padding: 0 4.5em;
+        padding: 0 4.5rem;
 
         display: flex;
         flex-direction: row;
         /* grid-template-columns: 3fr 2fr; */
-        gap: 5.25em;
+        gap: 5.25rem;
 
         @media screen {
           @media (max-width: 768px) {
             flex-wrap: wrap;
-            padding: 2.5em 3em;
-            gap: 2.25em;
+            padding: 2.5em 3rem;
+            gap: 2.25rem;
 
             /* flex-direction: column; */
           }
@@ -96,7 +96,7 @@ export const HomeContainer = styled.div`
         > div {
           display: flex;
           flex-direction: column;
-          gap: 1.5em;
+          gap: 1.5rem;
           > h2 {
             margin: 0;
           }
@@ -127,27 +127,27 @@ export const HomeContainer = styled.div`
     }
 
     .why-chatter {
-      padding: 0 12.5em;
+      padding: 0 12.5rem;
       display: flex;
       flex-direction: column;
-      gap: 3.375em;
-      padding-bottom: 6.6875em;
+      gap: 3.375rem;
+      padding-bottom: 6.6875rem;
 
       @media screen {
         @media (max-width: 768px) {
-          padding: 0 3em;
+          padding: 0 3rem;
         }
       }
 
       .reasons {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 3em;
+        gap: 3rem;
 
         @media screen {
           @media (max-width: 768px) {
             grid-template-columns: 1fr;
-            gap: 3em;
+            gap: 3rem;
           }
         }
       }
@@ -156,14 +156,14 @@ export const HomeContainer = styled.div`
     .join-chatter {
       display: flex;
       flex-direction: row;
-      gap: 1.625em;
-      padding: 3.25em;
+      gap: 1.625rem;
+      padding: 3.25rem;
       background-color: var(--background-color1);
 
       @media screen {
         @media (max-width: 768px) {
           flex-direction: column;
-          padding: 2.5em 3em;
+          padding: 2.5em 3rem;
         }
       }
 
@@ -172,7 +172,7 @@ export const HomeContainer = styled.div`
         justify-content: center;
 
         :first-child {
-          padding: 2em;
+          padding: 2rem;
           align-items: center;
 
           img {
@@ -188,7 +188,7 @@ export const HomeContainer = styled.div`
           em {
             font-style: normal;
             font-weight: 500;
-            font-size: 1.125em;
+            font-size: 1.125rem;
           }
         }
       }
@@ -197,13 +197,13 @@ export const HomeContainer = styled.div`
     .get-started {
         display: flex;
         flex-direction: row;
-        gap: 7.5em;
-        padding: 6em 9.75em;
+        gap: 7.5rem;
+        padding: 6em 9.75rem;
 
         @media screen {
             @media (max-width: 768px) {
                 flex-direction: column;
-                padding: 2.5em 3em;
+                padding: 2.5em 3rem;
             }
         }
 
@@ -213,7 +213,7 @@ export const HomeContainer = styled.div`
 
             :first-child{
                 flex-direction: row;
-                gap: 1.3125em;
+                gap: 1.3125rem;
 
                 img{
                     border-radius: 50%;
@@ -226,7 +226,7 @@ export const HomeContainer = styled.div`
 
                     :first-child{
                         flex-direction: column;
-                        gap: 5.6875em;
+                        gap: 5.6875rem;
                     }
                 }
             }
@@ -245,13 +245,13 @@ footer, .footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 3.753em 5em;
+    padding: 3.753em 5rem;
     background-color: var(--background-color1);
 
     @media screen {
         @media (max-width: 768px) {
             flex-direction: column;
-            padding: 2.5em 3em;
+            padding: 2.5em 3rem;
         }
     }
 
@@ -260,8 +260,7 @@ footer, .footer {
     }
 
     .logo{
-        font-size: 2.5em;
-    font-weight: bold;
+        font-size: 2.5rem;
     color: var(--secondary-color);
     font-weight: 500;
     }

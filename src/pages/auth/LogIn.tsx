@@ -1,9 +1,24 @@
+import { useAuthContext } from "../../contexts";
 import { LogInContainer } from "./LogIn.style";
 
 export function LogIn() {
+
+    const { signinWithEmail } = useAuthContext();
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const target = e.target as typeof e.target & {
+            email: { value: string };
+            password: { value: string };
+        };
+        const email = target.email.value;
+        const password = target.password.value;
+        signinWithEmail(email, password);
+    };
+    
     return <LogInContainer>
         <h2>Welcome back</h2>
-        <form className="login-form">
+        <form className="login-form" onSubmit={handleSubmit}>
             <div className="input-container">
                 <label htmlFor="email">Email address</label>
                 <input type="email" id="email" placeholder="example@example.com" autoComplete="username"/>

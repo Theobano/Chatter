@@ -5,7 +5,7 @@ export const AuthContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
-  gap: 2.25em;
+  gap: 2.25rem;
 
   > * {
     flex: 1;
@@ -38,7 +38,7 @@ export const AuthContainer = styled.div`
   }
 
   .content {
-    padding: 1.875em;
+    padding: 1.875rem;
 
     .nav {
       display: flex;

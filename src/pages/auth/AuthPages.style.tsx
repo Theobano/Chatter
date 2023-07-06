@@ -6,7 +6,7 @@ width: 100%;
 
 a {
     flex: 1;
-    font-size: 1em;
+    font-size: 1rem;
     text-decoration: none;
     color: var(--text-color);
     display: flex;
@@ -40,7 +40,7 @@ a {
     height: 100%;
     align-items: center;
     justify-content: center;
-    padding: 1.5em;
+    padding: 1.5rem;
 
 }
 `;

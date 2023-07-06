@@ -1,13 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { RouterProvider } from 'react-router-dom';
-import { router } from './router';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router";
+import { AuthProvider } from "./contexts";
 
 function App() {
   return (
-    <RouterProvider router={router}/>
-    
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   );
 }
 

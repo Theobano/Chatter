@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NavBarContainer = styled.div`
-padding: 1em 3em;
+padding: 1em 3rem;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
@@ -13,7 +13,7 @@ align-items: center;
 }
 
 .logo{
-    font-size: 2.5em;
+    font-size: 2.5rem;
     font-weight: bold;
     color: var(--secondary-color);
     font-weight: 500;
@@ -23,8 +23,8 @@ align-items: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.2em;
-    gap: 1.5em;
+    font-size: 1.2rem;
+    gap: 1.5rem;
 
     *{
         color: var(--balck700);
@@ -35,11 +35,11 @@ align-items: center;
 .nav-auth{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1em;
+    gap: 1rem;
 
     >*{
-        padding: 0.5em 1em;
-        font-size: 1.125em;
+        padding: 0.5em 1rem;
+        font-size: 1.125rem;
         font-weight: 700;
         border-radius: 5px;
     }

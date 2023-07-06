@@ -10,11 +10,11 @@ h2 {
 form {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    gap: 1.5rem;
 
     .name-container {
         display: flex;
-        gap: .75em;
+        gap: .75rem;
         width: 100%;
 
         >*{flex: 1;}

@@ -11,7 +11,7 @@ export function NavBar() {
                 <Link to="/">Home</Link>
                 <a href="#about">About us</a>
                 <Link to="#contact">Contact</Link>
-                <Link to="blogs">Blogs</Link>
+                <Link to="/feed">Blogs</Link>
             </div>
             <div className="nav-auth">
                 <Link to="/auth">Log in</Link>
