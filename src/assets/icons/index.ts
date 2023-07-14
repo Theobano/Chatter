@@ -10,3 +10,5 @@ export { SearchIcon } from './SearchIcon';
 export {OpenBookIcon} from './OpenBookIcon';
 export { CommentsIcon } from './CommentsIcon';
 export { FavoriteIcon } from './FavoriteIcon';
+export { PenIcon } from './PenIcon';
+export {GoogleIcon} from './GoogleIcon';

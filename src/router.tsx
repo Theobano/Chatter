@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import { Auth } from "./pages";
-import { LogIn, Register } from "./pages/auth";
+import { LogIn, Register, VerifyEmail } from "./pages/auth";
 import { AuthPages } from "./pages/auth/AuthPages";
-import { Home } from "./pages/home/Home";
+import { Home } from "./pages/home";
 import { Sidebar } from "./components/sidebar/Sidebar";
-import { Feed, PrivateRouteWrapper } from "./pages/private";
+import { CreateArticle, Feed, PrivateRouteWrapper } from "./pages/private";
+import { Verify } from "crypto";
 
 export const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -21,17 +22,27 @@ export const router = createBrowserRouter([
             path: "",
             element: <LogIn />,
           },
-          { path: "register", element: <Register /> },
+          {
+            path: "register", element: <Register />,
+          },
         ],
       },
+      {
+        path: "verify-email",
+        element: <VerifyEmail />
+      }
     ],
   },
   {
-    element: <PrivateRouteWrapper isWriter={true} />,
+    element: <PrivateRouteWrapper  />,
     children: [
       {
         path: "/feed",
         element: <Feed />,
+      },
+      {
+        path: "/create-article",
+        element: <CreateArticle />,
       },
     ],
   }

@@ -1,7 +1,18 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { AuthPagesContainer } from "./AuthPages.style";
+import { useAuthContext } from "../../contexts";
+import { useEffect } from "react";
 
 export function AuthPages() {
+  const navigation = useNavigate();
+  const { authState } = useAuthContext();
+
+  useEffect(() => {
+    if (authState.isAuthenticated) {
+      navigation("/feed");
+    }
+  }, [authState.isAuthenticated]);
+
     return <AuthPagesContainer>
         <div className="nav">
           <div>

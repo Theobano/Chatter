@@ -10,6 +10,29 @@ display: flex;
 flex-direction: column;
 gap: 1.5rem;
 
+.heading{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+
+    >a{
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: var(--secondary-color);
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        font-size: 1rem;
+        line-height: 1rem;
+        font-weight: 700;
+        color: var(--primary-color);
+
+    }
+}
+
 .feeds{
     flex: 1;
     display: flex;
@@ -20,7 +43,7 @@ gap: 1.5rem;
         gap: 1.5rem;
         padding: 0 1rem;
         border: 1px solid var(--black-100);
-        border-radius: 5px;
+        border-radius: 0.5rem;
 
         a{
             text-decoration: none;

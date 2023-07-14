@@ -41,6 +41,7 @@ a {
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
+    overflow: hidden;
 
 }
 `;

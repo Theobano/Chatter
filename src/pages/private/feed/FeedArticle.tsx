@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { AnalyticsIcon, CommentsIcon, FavoriteIcon, OpenBookIcon } from "../../../assets/icons";
 import { FeedArticleContainer } from "./FeedArticle.style";
 
@@ -48,40 +49,42 @@ export function FeedArticle(
 
     return (
         <FeedArticleContainer>
-            <div className="feed-article-header">
-                <div className="feed-article-author">
-                    <img src={author.profileImage} alt="author" />
-                    <div className="feed-article-author-info">
-                        <h3>{author.firstName} {author.lastName}</h3>
-                        <p>{author.title}</p>
+            <Link to="">
+                <div className="feed-article-header">
+                    <div className="feed-article-author">
+                        <img src={author.profileImage} alt="author" />
+                        <div className="feed-article-author-info">
+                            <h3>{author.firstName} {author.lastName}</h3>
+                            <p>{author.title}</p>
+                        </div>
+                    </div>
+                    <div className="feed-article-date">
+                        <p>{publishedAt}</p>
                     </div>
                 </div>
-                <div className="feed-article-date">
-                    <p>{publishedAt}</p>
+                <div className="feed-article-title">
+                    <h2>{title}</h2>
+                    <div className="feed-article-read-time"
+                    ><OpenBookIcon /><span>{readTime} min{readTime > 1 ? 's' : null} read</span></div>
                 </div>
-            </div>
-            <div className="feed-article-title">
-                <h2>{title}</h2>
-                <div className="feed-article-read-time"
-                ><OpenBookIcon /><span>{readTime} min{readTime > 1 ? 's' : null} read</span></div>
-            </div>
-            <div className="feed-article-short-text">
-                {displayText}               
-            </div>
-            <div className="feed-article-featured-image">
-                <img src={featuredImage} alt="featured" />
-            </div>
-            <div className="feed-article-footer">
-                <div className="feed-article-comments">
-                    <CommentsIcon /><span>{comments} comments</span>
+                <div className="feed-article-short-text">
+                    {displayText}
                 </div>
-                <div className="feed-article-likes">
-                    <FavoriteIcon /><span>{likes} likes</span>
+                <div className="feed-article-featured-image">
+                    <img src={featuredImage} alt="featured" />
                 </div>
-                <div className="feed-article-views">
-                    <AnalyticsIcon /><span>{views} views</span>
+                <div className="feed-article-footer">
+                    <div className="feed-article-comments">
+                        <CommentsIcon /><span>{comments} comments</span>
                     </div>
-            </div>
+                    <div className="feed-article-likes">
+                        <FavoriteIcon /><span>{likes} likes</span>
+                    </div>
+                    <div className="feed-article-views">
+                        <AnalyticsIcon /><span>{views} views</span>
+                        </div>
+                </div>
+            </Link>
 
     </FeedArticleContainer>
     )

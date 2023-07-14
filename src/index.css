@@ -26,6 +26,8 @@
 }
 *{
   box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+
 }
 html{
   display: flex;
@@ -122,4 +124,8 @@ button, .button{
 button:active, .button:active, button:focus, .button:focus{
   outline: none;
   box-shadow: none;
+}
+
+.text-center{
+  text-align: center;
 }

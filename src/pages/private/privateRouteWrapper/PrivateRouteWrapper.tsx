@@ -1,18 +1,20 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { Sidebar, Topbar } from "../../../components";
 import { PrivateRouteWrapperContainer } from "./PrivateRouteWrapper.style";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import { useAuthContext } from "../../../contexts";
 
-interface PrivateRouteWrapperProps {
-    isWriter: boolean;
-    // children: React.ReactNode;
-}
 
 export function PrivateRouteWrapper(
-    { isWriter,
-        // children
-    }: PrivateRouteWrapperProps
+
 ) {
+    const { authState } = useAuthContext();
+    const navigation = useNavigate()
+    useEffect(() => {
+        if (!authState.isAuthenticated) {
+            navigation("/auth");
+        }
+    }, [authState.isAuthenticated]);
     const sidebarRef = useRef<HTMLDivElement>(null);
     return (
         <PrivateRouteWrapperContainer>

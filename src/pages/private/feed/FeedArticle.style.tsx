@@ -3,7 +3,10 @@ import styled from "styled-components";
 export const FeedArticleContainer = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    >a{
+        padding: 1.5rem;
+        text-decoration: none;
+
 
     .feed-article-header{
         display: flex;
@@ -94,4 +97,5 @@ export const FeedArticleContainer = styled.div`
             }
         }
     }
+}
 `

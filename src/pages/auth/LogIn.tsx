@@ -1,9 +1,10 @@
+import { GoogleIcon } from "../../assets/icons";
 import { useAuthContext } from "../../contexts";
 import { LogInContainer } from "./LogIn.style";
 
 export function LogIn() {
 
-    const { signinWithEmail } = useAuthContext();
+    const { signinWithEmail, signinWithGoogle } = useAuthContext();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -29,5 +30,16 @@ export function LogIn() {
             </div>
             <button type="submit">Log in</button>
         </form>
+        <p
+            className="text-center"
+        >or</p>
+        <button
+            className="google-login-button"
+            onClick={signinWithGoogle}
+            
+        >
+            <GoogleIcon/>
+            <span>Log in with Google</span>
+        </button>
     </LogInContainer>
 }
