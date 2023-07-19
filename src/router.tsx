@@ -23,18 +23,19 @@ export const router = createBrowserRouter([
             element: <LogIn />,
           },
           {
-            path: "register", element: <Register />,
+            path: "register",
+            element: <Register />,
           },
         ],
       },
       {
         path: "verify-email",
-        element: <VerifyEmail />
-      }
+        element: <VerifyEmail />,
+      },
     ],
   },
   {
-    element: <PrivateRouteWrapper  />,
+    element: <PrivateRouteWrapper />,
     children: [
       {
         path: "/feed",
@@ -44,6 +45,11 @@ export const router = createBrowserRouter([
         path: "/create-article",
         element: <CreateArticle />,
       },
+      {
+        path: "/blog/:articleId",
+        element: <Feed />,
+        
+      },
     ],
-  }
+  },
 ]);

@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const AuthPagesContainer = styled.div`
 height: 100%;
 width: 100%;
-
+overflow: hidden;
+display: flex;
+flex-direction: column;
 a {
     flex: 1;
     font-size: 1rem;
@@ -34,14 +36,15 @@ a {
 
 
 .outlet-container {
+  flex: 1;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
-    overflow: hidden;
+    padding: 2.5rem 1.5rem;
+    overflow: auto;
 
 }
 `;

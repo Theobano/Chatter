@@ -6,6 +6,7 @@ export const AuthContainer = styled.div`
   flex-direction: row;
   flex: 1;
   gap: 2.25rem;
+  overflow: hidden;
 
   > * {
     flex: 1;
@@ -18,6 +19,10 @@ export const AuthContainer = styled.div`
     background-repeat: no-repeat;
     color: var(--primary-color);
     display: flex;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
 
     h1 {
       color: var(--primary-color);
@@ -39,6 +44,7 @@ export const AuthContainer = styled.div`
 
   .content {
     padding: 1.875rem;
+    overflow: hidden;
 
     .nav {
       display: flex;

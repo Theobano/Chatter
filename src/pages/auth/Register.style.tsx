@@ -10,7 +10,7 @@ h2 {
 display: flex;
 flex-direction: column;
 gap: 1.5rem;
-overflow: auto;
+/* overflow: auto; */
 
 form {
     display: flex;

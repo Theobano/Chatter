@@ -16,16 +16,11 @@ import {
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 
-import ls from "../../config/localStore";
-import { get } from "http";
-import { on } from "stream";
-import { sign } from "crypto";
-
 // create context
-export const AuthContext = createContext<any>(null);
+const AuthContext = createContext<any>(null);
 
 // create provider
-export const AuthProvider = ({ children }: any) => {
+const AuthProvider = ({ children }: any) => {
   // create initial state
   const initialState = {
     currentUser: null,
@@ -40,8 +35,6 @@ export const AuthProvider = ({ children }: any) => {
   const reducer = (state: any, action: any) => {
     switch (action.type) {
       case "LOGIN":
-        ls.set("user", action.payload.user);
-        // ls.set("tokenManager", action.payload.tokenManager);
         return {
           ...state,
           currentUser: action.payload.user,
@@ -51,24 +44,11 @@ export const AuthProvider = ({ children }: any) => {
           loading: false,
         };
       case "LOGOUT":
-        ls.remove("user");
-        ls.remove("tokenManager");
         return {
           ...state,
           currentUser: null,
           // tokenManager: null,
           isAuthenticated: false,
-          isError: false,
-          loading: false,
-        };
-      case "REFRESH":
-        ls.set("user", action.payload.user);
-        // ls.set("tokenManager", action.payload.tokenManager);
-        return {
-          ...state,
-          currentUser: action.payload.token,
-          // tokenManager: action.payload.tokenManager,
-          isAuthenticated: true,
           isError: false,
           loading: false,
         };
@@ -92,7 +72,7 @@ export const AuthProvider = ({ children }: any) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
-        const user = userCredential.user.toJSON();
+        const user = userCredential.user;
         //get access token, expiration time, and refresh token
         // const tokenManager = user["stsTokenManager" as keyof typeof user];
         if (user) {
@@ -131,15 +111,13 @@ export const AuthProvider = ({ children }: any) => {
         const token = credential!.accessToken;
         const user = result.user;
         if (getAdditionalUserInfo(result)!.isNewUser) {
-          deleteUser(user!)
-            .then(() => {
-              authDispatch({
-                type: "ERROR",
-                payload: { error: "Please sign up first" },
-              });
-            })
-        }
-          else {
+          deleteUser(user!).then(() => {
+            authDispatch({
+              type: "ERROR",
+              payload: { error: "Please sign up first" },
+            });
+          });
+        } else {
           authDispatch({
             type: "LOGIN",
             payload: { user: user },
@@ -352,7 +330,7 @@ export const AuthProvider = ({ children }: any) => {
     // }
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        const userObj = user.toJSON();
+        const userObj = user;
         authDispatch({
           type: "LOGIN",
           payload: { user: userObj },
@@ -369,4 +347,6 @@ export const AuthProvider = ({ children }: any) => {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
-export const useAuthContext = () => React.useContext(AuthContext);
+const useAuthContext = () => React.useContext(AuthContext);
+
+export {AuthProvider, useAuthContext}

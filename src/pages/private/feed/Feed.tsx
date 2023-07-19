@@ -6,12 +6,10 @@ import { PenIcon } from "../../../assets/icons";
 
 export function Feed() {
   // create state to hold articles
-  const [articles, setArticles] = useState<any[] | null>(null);
+  const [articles, setArticles] = useState<Article[] | null>(null);
   // sort articles by publishedAt
 
-  // convert articles to jsx using FeedArticles
-  // pass articles as props to FeedArticles
-  // render FeedArticles in the div with className="feeds-container"
+const [currentArticle, setCurrentArticle] = useState<any | null>(null);
 
   useEffect(() => {
     let data = require("../../../mock/article.json");
@@ -43,8 +41,8 @@ export function Feed() {
         comments: article.comments,
         featuredImage: article.featured_image,
         category: article.category,
-      };
-    });
+      } as Article;
+    }) as Article[];
 
     if (data) {
       setArticles(data.slice(0, 10));
@@ -80,7 +78,7 @@ export function Feed() {
 
           {articles
             ? articles.map((article: any) => {
-                return <FeedArticle {...article} key={article.id} />;
+                return <FeedArticle article={article} key={article.id} />;
               })
             : null}
         </div>
